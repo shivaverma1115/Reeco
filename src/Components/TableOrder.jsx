@@ -8,15 +8,15 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getTableData } from '../redux/action';
 
 const TableOrder = () => {
-    
-    const dispatch = useDispatch() ;
-    
-    useEffect(()=>{
-        dispatch(getTableData())
-    },[])
-    
     const item = useSelector(store => store.items)
     console.log(item) ;
+    
+    const dispatch = useDispatch() ;
+
+    useEffect(()=>{
+        dispatch(getTableData())
+    },[dispatch])
+    
 
 
     return (
@@ -64,4 +64,4 @@ const TableOrder = () => {
     )
 }
 
-export default TableOrder
+export default React.memo(TableOrder)

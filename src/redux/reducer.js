@@ -1,6 +1,7 @@
-// import dbData from './db.json';
+// import dbData from '../db.json';
+import dbData from '../db.json';
 
-import { getData_Error, getData_Pending, getData_Successful } from './actionType';
+import { getData_Error, getData_Pending, getData_Successful, getData_isStatus } from './actionType';
 
 const initialState = {
     items: [],
@@ -30,6 +31,13 @@ export const reducer = (state = initialState, action) => {
                 ...state,
                 pending: false,
                 error: payload
+            }
+        case getData_isStatus:
+            return {
+                ...state,
+                pending: false,
+                items: payload.data,
+                error: false
             }
         default:
             return state
