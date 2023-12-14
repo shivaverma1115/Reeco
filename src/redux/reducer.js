@@ -1,22 +1,35 @@
 // import dbData from './db.json';
-import dbData from '../db.json';
-import { getData, getDataApproved } from './actionType';
+
+import { getData_Error, getData_Pending, getData_Successful } from './actionType';
 
 const initialState = {
-    items: dbData.arr,
+    items: [],
+    pending: false,
+    error: false
 };
 
 export const reducer = (state = initialState, action) => {
     const { type, payload } = action;
     switch (type) {
-        case getData:
-            return {
-                ...state
-            }
-        case getDataApproved:
+        case getData_Pending:
             return {
                 ...state,
-                isApprove:payload
+                pending: true,
+                items: [],
+                error: false
+            }
+        case getData_Successful:
+            return {
+                ...state,
+                pending: false,
+                items: payload.data,
+                error: false
+            }
+        case getData_Error:
+            return {
+                ...state,
+                pending: false,
+                error: payload
             }
         default:
             return state

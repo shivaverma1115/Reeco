@@ -3,7 +3,7 @@ import React from 'react'
 import EditOptions from './EditOptions';
 
 const TableItems = ({ele}) => {
-    let {img,product_name,Brand,Price,Quantity,Total,Status} = ele ;
+    let {id,img,product_name,Brand,Price,Quantity,Total,Status} = ele ;
     product_name = product_name.substring(0,35) ;
     Brand = Brand.substring(0,25) ;
     return (
@@ -15,7 +15,7 @@ const TableItems = ({ele}) => {
             <Td >{Quantity}</Td>
             <Td >{Total}</Td>
             <Td>{Status}</Td>
-            <Td><EditOptions /></Td>
+            <Td><EditOptions id={ele.id}  /></Td>
         </Tr>
     )
 }

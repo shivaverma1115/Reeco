@@ -5,13 +5,18 @@ import { BsPrinter } from "react-icons/bs";
 import ButtonComponent from './ButtonComponent';
 import TableItems from './TableItems';
 import { useDispatch, useSelector } from 'react-redux'
+import { getTableData } from '../redux/action';
 
 const TableOrder = () => {
-    const item = useSelector(store => store.items)
-
-    // const dispatch = useDispatch() ;
-    console.log(item) ;
     
+    const dispatch = useDispatch() ;
+    
+    useEffect(()=>{
+        dispatch(getTableData())
+    },[])
+    
+    const item = useSelector(store => store.items)
+    console.log(item) ;
 
 
     return (
