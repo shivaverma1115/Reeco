@@ -4,7 +4,7 @@ import EditOptions from './EditOptions';
 
 const TableItems = ({ele}) => {
     let {img,product_name,Brand,Price,Quantity,Total,Status} = ele ;
-    product_name = product_name.substring(0,60) ;
+    product_name = product_name.substring(0,35) ;
     Brand = Brand.substring(0,25) ;
     return (
         <Tr>

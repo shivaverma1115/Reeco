@@ -2,10 +2,9 @@
 
 import OrderPage from "./Pages/OrderPage";
 
-
 function App() {
   return (
-    <div>
+    <div style={{backgroundColor:'#fbfbfb'}} >
       <OrderPage/>
     </div>
   );

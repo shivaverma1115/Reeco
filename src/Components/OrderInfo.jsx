@@ -4,7 +4,7 @@ import { FaAngleRight } from "react-icons/fa6";
 import ButtonComponent from './ButtonComponent';
 const OrderInfo = () => {
     return (
-        <Box bg={'red'}   w={'85%'} m={'auto'} mt={'8px'}  >
+        <Box w={'85%'} m={'auto'} mt={'8px'}  >
             <Breadcrumb p={'5px'} spacing='8px' separator={<FaAngleRight color='gray.500' />}>
                 <BreadcrumbItem>
                     <BreadcrumbLink href='#'>Order</BreadcrumbLink>
@@ -14,11 +14,11 @@ const OrderInfo = () => {
                     <BreadcrumbLink textDecoration={'underline'} href='#'>Order 32457ABC</BreadcrumbLink>
                 </BreadcrumbItem>
             </Breadcrumb>
-            <Flex bg={'tomato'} >
+            <Flex>
                 <Text fontSize={'30px'} my={'5px'} fontWeight={600} >Order 32457ABC</Text>
                 <Spacer />
                 <Flex my={'auto'} >
-                    <ButtonComponent props={'Back'} />
+                    <ButtonComponent text={'Back'} bg={'none'} />
                     <Button borderRadius={'50px'} bg={'#1e633f'} color={'white'} >Approve order</Button>
                 </Flex>
             </Flex>

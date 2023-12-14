@@ -5,7 +5,7 @@ import iconsImg from "../Images/iconsImg.jpg"
 const SecondOrderIndo = () => {
     return (
         <Box w={'85%'} m={'auto'} my={'20px'} >
-            <Grid templateColumns='repeat(6, 1fr)' border={'1px solid gray'} borderRadius={10} >
+            <Grid templateColumns='repeat(auto-fill, minmax(200px,1fr))' border={'1px solid gray'} borderRadius={10} >
                 <GridItem bg={'tomato'} w='100%'p={5} fontWeight={700}>
                     <Text fontSize={'15px'}  color={'gray'} >Supplier</Text>
                     <Text >East coast fruits & vegetables</Text>
