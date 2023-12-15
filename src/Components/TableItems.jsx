@@ -7,8 +7,8 @@ import MissingUrgent from './MissingUrgent';
 const TableItems = ({ ele }) => {
     const [element, setElement] = useState(ele);
     let { id, img, product_name, Brand, Price, Quantity, Total, Status } = element;
-    product_name = `${product_name.substring(0, 35)}...`;
-    Brand = `${Brand.substring(0, 25)}...`;
+    product_name = `${product_name.substring(0, 20)}...`;
+    Brand = `${Brand.substring(0, 10)}...`;
 
     const [bg, setBg] = useState('');
     const { isOpen, onOpen, onClose } = useDisclosure()
@@ -33,10 +33,10 @@ const TableItems = ({ ele }) => {
             <Td >{`$${Price}/${Quantity}*1LB`}</Td>
             <Td >{`${Quantity}x6*1LB`}</Td>
             <Td >{`$${Math.ceil(Price*Quantity)}`}</Td>
-            <Td>
+            <Td bg={'gray.100'} >
                 <Box textAlign={'center'} bg={bg} color={'white'} p={2} borderRadius={30}>{Status}</Box>
             </Td>
-            <Td>
+            <Td bg={'gray.100'}>
                 <Flex justifyContent={'space-between'} >
                     <Box cursor={'pointer'} fontSize={20} mx={3} onClick={() => handleElement("Approved")} ><GoCheck /></Box>
                     <Box cursor={'pointer'} fontSize={20} mx={3} onClick={() => handleElement("Missing")} ><GoX />
