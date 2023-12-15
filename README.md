@@ -10,9 +10,9 @@
 **Desktop mode:** 
 <img src="https://res.cloudinary.com/dbbuqesjg/image/upload/v1702625828/Reeco%20Image/Screenshot_11_lwi0mw.png" />
 
-<br/>
-<img src="https://res.cloudinary.com/dbbuqesjg/image/upload/v1702625941/Reeco%20Image/Screenshot_12_a1owzc.png" />
+
 **Moblie mode:** 
+<img src="https://res.cloudinary.com/dbbuqesjg/image/upload/v1702625941/Reeco%20Image/Screenshot_12_a1owzc.png" />
 
 This project leverages Redux and Redux-Thunk for robust state management within the React application. JSON data fuels both API integrations and dynamic content changes, while Chakra UI elevates the user interface with its accessible and modular styling system.
 
