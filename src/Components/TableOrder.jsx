@@ -27,14 +27,14 @@ const TableOrder = () => {
                         <Input borderRadius={20}
                             placeholder='Search...'
                         />
-                        <InputRightElement width='4.5rem'>
+                        <InputRightElement width='4.5rem' cursor={'pointer'}>
                             <CiSearch />
                         </InputRightElement>
                     </InputGroup>
                     <Spacer />
                     <Flex my={'auto'} mt={[3, 0]} >
                         <ButtonComponent text={'Add item'} bg={'none'} />
-                        <Box my={'auto'} ml={[0, 10]} fontSize={30} ><BsPrinter /></Box>
+                        <Box cursor={'pointer'} my={'auto'} ml={[0, 10]} fontSize={30} ><BsPrinter /></Box>
                     </Flex>
                 </Flex>
             </Flex>

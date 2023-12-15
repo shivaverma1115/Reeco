@@ -42,7 +42,7 @@ const TableItems = ({ ele }) => {
                     <Box cursor={'pointer'} fontSize={20} mx={3} onClick={() => handleElement("Missing")} ><GoX />
                     <MissingUrgent isOpen={isOpen} onClose={onClose} setElement={setElement}ele={ele}setBg={setBg} />
                     </Box>
-                    <Box fontSize={20} mx={3}  >
+                    <Box cursor={'pointer'} fontSize={20} mx={3}  >
                         <Text>Edit</Text>
                     </Box>
                 </Flex>

@@ -7,11 +7,11 @@ const OrderInfo = () => {
         <Box w={'85%'} m={'auto'} mt={'8px'}  >
             <Breadcrumb p={'5px'} spacing='8px' separator={<FaAngleRight color='gray.500' />}>
                 <BreadcrumbItem>
-                    <BreadcrumbLink href='#'>Order</BreadcrumbLink>
+                    <BreadcrumbLink cursor={'pointer'} href='/order'>Order</BreadcrumbLink>
                 </BreadcrumbItem>
 
                 <BreadcrumbItem isCurrentPage  >
-                    <BreadcrumbLink textDecoration={'underline'} href='#'>Order 32457ABC</BreadcrumbLink>
+                    <BreadcrumbLink cursor={'pointer'} textDecoration={'underline'} href='/Order32457ABC'>Order 32457ABC</BreadcrumbLink>
                 </BreadcrumbItem>
             </Breadcrumb>
             <Flex display={['box','flex']} >
