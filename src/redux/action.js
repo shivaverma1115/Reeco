@@ -29,16 +29,3 @@ export const getTableData = () => {
             // })
 //     }
 // }
-
-// export const getChangeStatus = (id,payload) =>async(dispatch)=>{
-//     try{
-//      const res = await axios.put(`https://recco-data.onrender.com/arr/${id}`,payload)
-//      console.log(res) ;
-//      dispatch({
-//          type : getData_isStatus,
-//          payload : res
-//     })
-//     }catch(err){
-//         console.log(err);
-//     }
-//  }

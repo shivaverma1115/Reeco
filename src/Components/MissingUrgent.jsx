@@ -9,9 +9,9 @@ const MissingUrgent = ({ isOpen, onClose, ele, setElement, setBg }) => {
     }
     return (
         <Box>
-            <Modal isCentered isOpen={isOpen} onClose={onClose} >
+            <Modal isOpen={isOpen} onClose={onClose} >
                 <ModalOverlay />
-                <ModalContent>
+                <ModalContent position={'absolute'} bottom={10} >
                     <ModalHeader>Missing product</ModalHeader>
                     <ModalCloseButton />
                     <ModalBody>
