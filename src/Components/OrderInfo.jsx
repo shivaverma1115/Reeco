@@ -14,7 +14,7 @@ const OrderInfo = () => {
                     <BreadcrumbLink textDecoration={'underline'} href='#'>Order 32457ABC</BreadcrumbLink>
                 </BreadcrumbItem>
             </Breadcrumb>
-            <Flex>
+            <Flex display={['box','flex']} >
                 <Text fontSize={'30px'} my={'5px'} fontWeight={600} >Order 32457ABC</Text>
                 <Spacer />
                 <Flex my={'auto'} >

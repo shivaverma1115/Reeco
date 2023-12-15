@@ -1,35 +1,47 @@
-import { Box, Flex, Img, Td, Text, Tr } from '@chakra-ui/react'
+import { Box, Flex, Img, Td, Text, Tr, useDisclosure } from '@chakra-ui/react'
 import React, { useState } from 'react'
-import EditOptions from './EditOptions';
 import { GoCheck } from "react-icons/go";
 import { GoX } from "react-icons/go";
+import MissingUrgent from './MissingUrgent';
 
 const TableItems = ({ ele }) => {
     const [element, setElement] = useState(ele);
     let { id, img, product_name, Brand, Price, Quantity, Total, Status } = element;
     product_name = product_name.substring(0, 35);
     Brand = Brand.substring(0, 25);
+
     const [bg, setBg] = useState('');
-    const handleElement = (status) => {
-        console.log(status)
-        status === 'Approved' ? setBg('#3dca72') : setBg('#db2114');
-        // setElement({ ...ele, Status: status })
+    const { isOpen, onOpen, onClose } = useDisclosure()
+    const handleElement = (statusIs) => {
+        console.log(statusIs)
+        if (statusIs === 'Missing') {
+            onOpen() ;
+            // setElement({ ...ele, Status: statusIs })
+            
+        }
+        else {
+            setElement({ ...ele, Status: statusIs })
+            statusIs === 'Approved' ? setBg('#3dca72') : setBg('#db2114');
+        }
     }
+
     return (
         <Tr>
             <Td w={10}><Img src={img} /></Td>
             <Td >{product_name}</Td>
             <Td>{Brand}</Td>
-            <Td >{Price}</Td>
-            <Td >{Quantity}</Td>
-            <Td >{Total}</Td>
+            <Td >{`$${Price}/${Quantity}*1LB`}</Td>
+            <Td >{`${Quantity}x6*1LB`}</Td>
+            <Td >{`$${Total}`}</Td>
             <Td>
-                <Box textAlign={'center'} bg={bg} color={'white'} p={2} borderRadius={30}>{bg==='#3dca72'?'Approved':'Missing'}</Box>
+                <Box textAlign={'center'} bg={bg} color={'white'} p={2} borderRadius={30}>{Status}</Box>
             </Td>
             <Td>
-                <Flex bg={'tomato'} justifyContent={'space-between'} >
-                    <Box fontSize={20} mx={3} onClick={() => handleElement("Approved")} ><GoCheck /></Box>
-                    <Box fontSize={20} mx={3} onClick={() => handleElement("Missing")} ><GoX /></Box>
+                <Flex justifyContent={'space-between'} >
+                    <Box cursor={'pointer'} fontSize={20} mx={3} onClick={() => handleElement("Approved")} ><GoCheck /></Box>
+                    <Box cursor={'pointer'} fontSize={20} mx={3} onClick={() => handleElement("Missing")} ><GoX />
+                    <MissingUrgent isOpen={isOpen} onClose={onClose} setElement={setElement}ele={ele}setBg={setBg} />
+                    </Box>
                     <Box fontSize={20} mx={3}><Text>Edit</Text></Box>
                 </Flex>
             </Td>

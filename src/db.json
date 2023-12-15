@@ -8,8 +8,7 @@
             "Price": 60.67,
             "Quantity": 0,
             "Total": 0,
-            "Status": "",
-            "isApprove": ""
+            "Status": ""
         },
         {
             "id":2,
@@ -19,8 +18,7 @@
             "Price": 60.67,
             "Quantity": 0,
             "Total": 0,
-            "Status": "",
-            "isApprove": ""
+            "Status": ""
         }
     ]
 }

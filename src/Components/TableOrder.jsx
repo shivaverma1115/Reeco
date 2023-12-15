@@ -9,21 +9,21 @@ import { getTableData } from '../redux/action';
 
 const TableOrder = () => {
     const item = useSelector(store => store.items)
-    console.log(item) ;
-    
-    const dispatch = useDispatch() ;
+    console.log(item);
 
-    useEffect(()=>{
+    const dispatch = useDispatch();
+
+    useEffect(() => {
         dispatch(getTableData())
-    },[dispatch])
-    
+    }, [])
 
+    console.log(item);
 
     return (
-        <Box w={'85%'} m={'auto'}my={'auto'} bg={'gray'} px={10} py={5}  >
+        <Box border={'1px solid gray'} w={'85%'} m={'auto'} my={'auto'} px={10} py={5}  >
             <Flex>
-                <Flex w={'100%'} bg={'tomato'}  >
-                    <InputGroup size='md' w={'30vw'} >
+                <Flex w={'100%'} display={['box', 'flex']}  >
+                    <InputGroup size='md' w={['100%', '30vw']} >
                         <Input borderRadius={20}
                             placeholder='Search...'
                         />
@@ -32,16 +32,16 @@ const TableOrder = () => {
                         </InputRightElement>
                     </InputGroup>
                     <Spacer />
-                    <Flex my={'auto'}>
-                        <ButtonComponent text={'Add item'}bg={'none'} />
-                        <Box my={'auto'} ml={10} fontSize={30} ><BsPrinter /></Box>
+                    <Flex my={'auto'} mt={[3, 0]} >
+                        <ButtonComponent text={'Add item'} bg={'none'} />
+                        <Box my={'auto'} ml={[0, 10]} fontSize={30} ><BsPrinter /></Box>
                     </Flex>
                 </Flex>
             </Flex>
-            <TableContainer >
+            <TableContainer  >
                 <Table variant='simple' mt={5} >
                     <Thead>
-                        <Tr >
+                        <Tr>
                             <Th>Image</Th>
                             <Th>Product name</Th>
                             <Th>Brand</Th>
@@ -53,7 +53,7 @@ const TableOrder = () => {
                     </Thead>
                     <Tbody>
                         {
-                            item.map((ele,i)=>{
+                            item.map((ele, i) => {
                                 return <TableItems key={i} ele={ele} />
                             })
                         }
