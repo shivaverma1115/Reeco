@@ -1,6 +1,7 @@
 import { Box, Flex, Grid, GridItem, Image, Img, Text } from '@chakra-ui/react'
 import React from 'react'
 import iconsImg from "../Images/iconsImg.jpg"
+import GroupIcons from './GroupIcons'
 
 const SecondOrderIndo = () => {
     return (
@@ -20,7 +21,7 @@ const SecondOrderIndo = () => {
                 </GridItem>
                 <GridItem w='100%'p={5} fontWeight={700}>
                     <Text fontSize={'15px'}  color={'gray'} >Category</Text>
-                    <Image src={iconsImg} />
+                    <GroupIcons />
                 </GridItem>
                 <GridItem w='100%'p={5} fontWeight={700}>
                     <Text fontSize={'15px'}  color={'gray'} >Department</Text>
