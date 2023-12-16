@@ -27,7 +27,6 @@ export const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 pending: true,
-                items: [],
                 error: false
             }
         case getData_Successful:
