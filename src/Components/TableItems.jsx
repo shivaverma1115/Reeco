@@ -45,7 +45,7 @@ const TableItems = ({ ele }) => {
                     </Box>
                     <Box cursor={'pointer'} fontSize={20} mx={3}  >
                         {/* <Text>Edit</Text> */}
-                        <Edit element={element} />
+                        <Edit element={element} setElement={setElement} />
                     </Box>
                 </Flex>
             </Td>
