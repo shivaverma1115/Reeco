@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { GoCheck } from "react-icons/go";
 import { GoX } from "react-icons/go";
 import MissingUrgent from './MissingUrgent';
+import Edit from './Edit';
 
 const TableItems = ({ ele }) => {
     const [element, setElement] = useState(ele);
@@ -43,7 +44,8 @@ const TableItems = ({ ele }) => {
                     <MissingUrgent isOpen={isOpen} onClose={onClose} setElement={setElement}ele={ele}setBg={setBg} />
                     </Box>
                     <Box cursor={'pointer'} fontSize={20} mx={3}  >
-                        <Text>Edit</Text>
+                        {/* <Text>Edit</Text> */}
+                        <Edit element={element} />
                     </Box>
                 </Flex>
             </Td>

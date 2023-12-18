@@ -14,18 +14,20 @@ export const getTableData = () => {
             })
     }
 }
-// export const getChangeStatus = (action) => {
+
+
+// export const getChangeEdit = (action) => {
 //     const {id,payload} = action ;
 //     console.log(id) ;
 //     return (dispatch) => {
-        // dispatch({ type: getData_Pending });
-        // axios.patch(`https://recco-data.onrender.com/arr/${id}`,{Status:payload})
-            // .then(res => {
-            //     dispatch({ type: getData_isStatus, payload: res });
-            // })
-            // .catch(error => {
-            //     console.log(error) ;
-            //     // dispatch({ type: getData_Error, payload: error })
-            // })
+//         dispatch({ type: getData_Pending });
+//         axios.patch(`https://recco-data.onrender.com/arr/${id}`,{Status:payload})
+//             .then(res => {
+//                 dispatch({ type: getData_isStatus, payload: res });
+//             })
+//             .catch(error => {
+//                 console.log(error) ;
+//                 // dispatch({ type: getData_Error, payload: error })
+//             })
 //     }
 // }

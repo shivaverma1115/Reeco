@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Input, InputGroup, InputRightElement, Spacer, Table, TableCaption, TableContainer, Tbody, Td, Tfoot, Th, Thead, Tr } from '@chakra-ui/react'
+import { Box, Button, Flex, Input, InputGroup, InputRightElement, Spacer, Spinner, Table, TableCaption, TableContainer, Tbody, Td, Tfoot, Th, Thead, Tr } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import { CiSearch } from "react-icons/ci";
 import { BsPrinter } from "react-icons/bs";
@@ -9,15 +9,14 @@ import { getTableData } from '../redux/action';
 
 const TableOrder = () => {
     const item = useSelector(store => store.items)
-    console.log(item);
+    const pending = useSelector(store => store.pending)
+    console.log(pending);
 
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(getTableData())
     }, [])
-
-    console.log(item);
 
     return (
         <Box border={'1px solid gray'} w={'85%'} m={'auto'} my={'auto'} px={10} py={5}  >
@@ -38,28 +37,34 @@ const TableOrder = () => {
                     </Flex>
                 </Flex>
             </Flex>
-            <TableContainer  >
-                <Table variant='simple' mt={5} >
-                    <Thead>
-                        <Tr>
-                            <Th>Image</Th>
-                            <Th>Product name</Th>
-                            <Th>Brand</Th>
-                            <Th >Price</Th>
-                            <Th >Quantity</Th>
-                            <Th >Total</Th>
-                            <Th>Status</Th>
-                        </Tr>
-                    </Thead>
-                    <Tbody>
-                        {
-                            item.map((ele, i) => {
-                                return <TableItems key={i} ele={ele} />
-                            })
-                        }
-                    </Tbody>
-                </Table>
-            </TableContainer>
+            {
+                pending ?
+                    <Box w={'fit-content'} m={'auto'}>
+                        <Spinner size='lg' />
+                    </Box> :
+                    <TableContainer  >
+                        <Table variant='simple' mt={5} >
+                            <Thead>
+                                <Tr>
+                                    <Th>Image</Th>
+                                    <Th>Product name</Th>
+                                    <Th>Brand</Th>
+                                    <Th >Price</Th>
+                                    <Th >Quantity</Th>
+                                    <Th >Total</Th>
+                                    <Th>Status</Th>
+                                </Tr>
+                            </Thead>
+                            <Tbody>
+                                {
+                                    item.map((ele, i) => {
+                                        return <TableItems key={i} ele={ele} />
+                                    })
+                                }
+                            </Tbody>
+                        </Table>
+                    </TableContainer>
+            }
         </Box>
     )
 }
