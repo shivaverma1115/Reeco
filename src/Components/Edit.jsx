@@ -57,9 +57,9 @@ const Edit = ({ element, setElement }) => {
                                 </Flex>
                                 <Flex my={3} justifyContent={'space-between'} >
                                     <Text mr={5}>Quantity</Text>
-                                    <Box w={'17vw'}>
-                                        <Button borderRadius={'50px'} p={1} mx={2} bg={'#3dca72'} color={'white'} disabled={count == 1} onClick={() => setCount(count - 1)} >-</Button>
-                                        <Input w={'6vw'} m={'auto'} value={count} />
+                                    <Box w={'20vw'} >
+                                        <Button borderRadius={'50px'} p={1} mx={2} bg={'#3dca72'} color={'white'} isDisabled={count===-1} onClick={() => setCount(count - 1)} >-</Button>
+                                        <Input w={'6vw'} m={'auto'} value={count} onChange={(e)=>setCount(e.target.value)} />
                                         <Button borderRadius={'50px'} p={1} mx={1} bg={'#3dca72'} color={'white'} onClick={() => setCount(count + 1)}>+</Button>x6*1LB
                                     </Box>
                                 </Flex>
