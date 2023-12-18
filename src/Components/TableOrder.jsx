@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Input, InputGroup, InputRightElement, Spacer, Spinner, Table, TableCaption, TableContainer, Tbody, Td, Tfoot, Th, Thead, Tr } from '@chakra-ui/react'
+import { Box, Button, Flex, Input, InputGroup, InputRightElement, Spacer, Spinner, Table, TableCaption, TableContainer, Tbody, Td, Text, Tfoot, Th, Thead, Tr } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import { CiSearch } from "react-icons/ci";
 import { BsPrinter } from "react-icons/bs";
@@ -10,6 +10,7 @@ import { getTableData } from '../redux/action';
 const TableOrder = () => {
     const item = useSelector(store => store.items)
     const pending = useSelector(store => store.pending)
+    // let pending = true;
     console.log(pending);
 
     const dispatch = useDispatch();
@@ -39,9 +40,12 @@ const TableOrder = () => {
             </Flex>
             {
                 pending ?
-                    <Box w={'fit-content'} m={'auto'}>
-                        <Spinner size='lg' />
-                    </Box> :
+                    <>
+                        <Box w={'fit-content'} m={'auto'}>
+                            <Spinner size='lg' />
+                        </Box>
+                        <Text fontWeight={700} w={'fit-content'} m={'auto'}>Data retrieval is in progress. You can expect the results within approximately one minute.</Text>
+                    </> :
                     <TableContainer  >
                         <Table variant='simple' mt={5} >
                             <Thead>
