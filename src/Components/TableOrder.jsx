@@ -44,7 +44,9 @@ const TableOrder = () => {
                         <Box w={'fit-content'} m={'auto'}>
                             <Spinner size='lg' />
                         </Box>
-                        <Text fontWeight={700} w={'fit-content'} m={'auto'}>Data retrieval is in progress. You can expect the results within approximately one minute.</Text>
+                        <Text fontWeight={700} w={'fit-content'} m={'auto'}>
+                            Data retrieval is in progress. You can expect the results within approximately one minute.
+                        </Text>
                     </> :
                     <TableContainer  >
                         <Table variant='simple' mt={5} >

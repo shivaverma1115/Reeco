@@ -33,7 +33,7 @@ const TableItems = ({ ele }) => {
             <Td>{Brand}</Td>
             <Td >{`$${Price}/${Quantity}*1LB`}</Td>
             <Td >{`${Quantity}x6*1LB`}</Td>
-            <Td >{`$${Math.ceil(Price*Quantity)}`}</Td>
+            <Td >{`$${Math.floor(Price * Quantity*100)/100}`}</Td>
             <Td bg={'gray.100'} >
                 <Box textAlign={'center'} bg={bg} color={'white'} p={2} borderRadius={30}>{Status}</Box>
             </Td>

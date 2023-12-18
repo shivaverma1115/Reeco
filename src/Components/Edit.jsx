@@ -51,21 +51,22 @@ const Edit = ({ element, setElement }) => {
                                 <Img src={img} />
                             </Box>
                             <Box >
-                                <Flex >
+                                <Flex>
                                     <Text >Price($)</Text>
                                     <Input ml={40} w={'8vw'} value={Price} onChange={(e) => setPr(e.target.value)} />/6*1LB
+                                    {/* <Input   ml={40}w={'8vw'} value={Price} onChange={(e) => setPr(e.target.value)} /> */}
                                 </Flex>
                                 <Flex my={3} justifyContent={'space-between'} >
                                     <Text mr={5}>Quantity</Text>
                                     <Box w={'20vw'} >
-                                        <Button borderRadius={'50px'} p={1} mx={2} bg={'#3dca72'} color={'white'} isDisabled={count===0} onClick={() => setCount(count - 1)} >-</Button>
-                                        <Input w={'6vw'} m={'auto'} value={count} onChange={(e)=>setCount(e.target.value)} />
+                                        <Button borderRadius={'50px'} p={1} mx={2} bg={'#3dca72'} color={'white'} isDisabled={count === 0} onClick={() => setCount(count - 1)} >-</Button>
+                                        <Input w={'6vw'} m={'auto'} value={count} onChange={(e) => setCount(e.target.value)} />
                                         <Button borderRadius={'50px'} p={1} mx={1} bg={'#3dca72'} color={'white'} onClick={() => setCount(count + 1)}>+</Button>x6*1LB
                                     </Box>
                                 </Flex>
                                 <Flex>
                                     <Text mr={5}>Total</Text>
-                                    <Text w={'fit-content'} m={'auto'} >{Price * count}</Text>
+                                    <Text w={'fit-content'} m={'auto'} >{Math.floor(Price * count * 100) / 100}</Text>
                                 </Flex>
                             </Box>
                         </Flex>
