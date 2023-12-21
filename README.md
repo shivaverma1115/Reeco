@@ -8,7 +8,7 @@
 **Recco:** At CAW Studios, I crafted a responsive order page utilizing React (deployed on Vercel) and Chakra UI, with dynamic product displays and real-time cart updates, enhancing user experience and streamlining the checkout process.
 <br/>
 **Desktop mode:** 
-<img src="https://res.cloudinary.com/dbbuqesjg/image/upload/v1702625828/Reeco%20Image/Screenshot_11_lwi0mw.png" />
+<img src="https://res.cloudinary.com/dbbuqesjg/image/upload/v1703159307/Reeco%20Image/Screenshot_13_buk7dm.png" />
 
 
 **Moblie mode:** 
